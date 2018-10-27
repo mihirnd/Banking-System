@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-4">
+      <h1></h1>
+    </div>
+    <div class="col-md-4" class="card">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="form-container">
+          <label style="padding: 10px">Account Number:
+            <input type="text" formControlName="account_no" placeholder="Account Number"> </label>
+          <br>
+          <label style="padding: 10px">Password:
+            <input type="password" formControlName="password" placeholder="Password">
+          </label>
+
+
+          <br>
+          <input type="submit" class="btn btn-primary" value="Login">
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <h1></h1>
+    </div>
+  </div>
+</div>

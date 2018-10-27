@@ -1,0 +1,17 @@
+<form [formGroup]="newUserForm" (ngSubmit)="register()">
+  <div class="form-container">
+    <label style="padding: 10px">Name
+      <input type="text" formControlName="name" placeholder="Name"> </label>
+    <br>
+    <label style="padding: 10px">Password:
+      <input type="password" formControlName="pwd" placeholder="Password">
+    </label>
+    <br>
+    <label style="padding: 10px">Email
+      <input type="email" formControlName="email" placeholder="Email"> </label>
+    <br>
+
+
+    <input type="submit" class="btn btn-primary" value="Register">
+  </div>
+</form>

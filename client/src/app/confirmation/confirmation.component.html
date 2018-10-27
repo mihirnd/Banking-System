@@ -1,0 +1,20 @@
+<div *ngIf="!otpConfirmed">
+  <p>Beneficiary: {{accidben}}</p>
+  <p>Remitter: {{accidrem}}</p>
+  <p>Amount: {{amount}}</p>
+  <form [formGroup]="otpForm" (ngSubmit)="checkOTP()">
+    <h5>Enter OTP</h5>
+    <div class="form-container">
+      <label style="padding: 10px">OTP:
+        <input type="text" formControlName="otp" placeholder="OTP"> </label>
+      <br>
+      <br>
+      <input type="submit" class="btn btn-secondary" value="Confirm OTP">
+
+    </div>
+  </form>
+</div>
+<div *ngIf="otpConfirmed">
+  OTP Confirmed!
+  Funds Transferred!
+</div>

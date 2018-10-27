@@ -1,0 +1,17 @@
+<form [formGroup]="selectAccountForm" (ngSubmit)="getDetails()">
+    <div class="form-container">
+      <select formControlName="accid" style="width: 20%" class="custom-select">
+        <option selected>Select Account</option>
+        <option *ngFor="let account of accounts" value="{{account.accid}}">{{account.accid}}</option>
+      </select>
+
+      <input type="submit" class="btn btn-primary" value="Get Details">
+    </div>
+  </form>
+  <div *ngIf="isDetails">
+    <p>Account Number: {{account.accid}}</p>
+    <p>Type: {{account.type}}</p>
+    <p>Balance: {{account.balance}}</p>
+  </div>
+  <br>
+  <button class="btn btn-secondary" (click)="transferFunds()">Transfer Funds</button>

@@ -1,0 +1,43 @@
+<form [formGroup]="fundTransferForm" (ngSubmit)="log()">
+  <div class="form-container">
+
+    <label style="padding: 10px">Beneficiary Account Number:
+      <input type="number" id="accidben" formControlName="accidben" placeholder="Account Number"
+      (change)="check()">
+    </label>
+    <span class="bg-danger" *ngIf="!fundTransferForm.get('accidben').valid &&
+    fundTransferForm.get('accidben').touched">
+      Please enter a valid Account Number</span>
+
+    <br>
+
+    <div>
+      <label style="padding: 10px">Remitter Account Number:
+        <select formControlName="accidrem" (change)="check()" style="width: 20%" class="custom-select">
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select> </label>
+
+      <span class="bg-danger" *ngIf="!fundTransferForm.get('accidrem').valid && fundTransferForm.get('accidrem').touched && remValid">
+        <br> Please enter a valid Account Number</span>
+
+
+    </div>
+    <label style="padding: 10px">
+      <br>
+      Amount:
+      <input type="number" formControlName="amount" (change)="check()" placeholder="Amount">
+    </label>
+
+    <span class="bg-danger" *ngIf="!fundTransferForm.get('amount').valid && fundTransferForm.get('amount').touched">
+      <br> Please enter a valid Amount</span>
+    <br>
+
+    <!-- <button (click)="check()">Confirm</button> -->
+
+    <br>
+    <input type="submit" [disabled]="!fundTransferForm.valid" class="btn btn-secondary" value="Transfer" (click)="transferFunds()">
+  </div>
+
+</form>
